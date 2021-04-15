@@ -1,8 +1,8 @@
-# Preparation
+# Preparations
 
 Before starting doing any lab, we should first set up `xv6` on our own computers. [Here](https://pdos.csail.mit.edu/6.S081/2020/tools.html) is the instruction of installation. Yet I stuck on some of the steps. Fortunately the problems have already solved and my solutions are written below.\
 \
-P.S. I was using Ubuntu at that time so I followed the "Installing via APT (Debian/Ubuntu)" part of instructions.
+PS. I was using Ubuntu at that time so I followed the "Installing via APT (Debian/Ubuntu)" part of instructions.
 
 ## 1) riscv64-linux-gnu-gcc: error: unrecognized command line option ‘-mno-relax’; did you mean ‘-Wno-vla’?
 
