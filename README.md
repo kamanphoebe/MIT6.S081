@@ -10,4 +10,4 @@ PS. I'm using Ubuntu 20.04.2.
 [Preparations](./Preparations.md)\
 [Lab util: Unix utilities](./Util.md)\
 [Lab syscall: System calls](./Syscall.md)\
-[Lab pgtbl: Page tables](./Syscall.md)
+[Lab pgtbl: Page tables](./Pgtbl.md)
