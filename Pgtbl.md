@@ -52,7 +52,7 @@ The goal of this part is to let every process gets its own kernel page table whi
 
 ### My solutions
 
-There are plenty of modifications so I list nearly all of them and respectively give a brief conclusion below, mainly introduce the differences of old functions and the usage of new functions. The complete codes(in the last version) can be found in the file.
+There are plenty of modifications so I list nearly all of them and respectively give a brief conclusion below, mainly introduce the differences of old functions and the usage of new functions. The complete codes(in the last version) can be found in the [files](./kernel).
 Don't forget to define all your new functions in `defs.h`.
 
 `proc.c`
@@ -90,7 +90,7 @@ The main job here is to copy the mappings from a process's user page table to it
 
 ### My solutions
 
-Same as the previous part, check the codes in file if needed. Below is a brief introduction:
+Same as the previous part, check the codes in [files](./kernel) if needed. Below is a brief introduction:
 
 `proc.c`
 
