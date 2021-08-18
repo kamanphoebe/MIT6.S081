@@ -1,6 +1,8 @@
 # Lab pgtbl: Page tables
 
 This lab is really hard to debug that I spent days to finish...\
+By the way, I wonder whether `usertest` sometimes does not work properly because I met that some tests failed whereas I had not modified anything since the previous all-pass. Fortunately, everything returns normal after `make clean`.\
+</br>
 For this lab, I only modified `proc.c`, `vm.c`, `exec.c`, `proc.h` and `defs.h`.
 
 ## Print a page table
@@ -44,6 +46,7 @@ vmprint(pagetable_t pagetable, int level)
 
 Explain the output of vmprint in terms of Fig 3-4 from the text. What does page 0 contain? What is in page 2? When running in user mode, could the process read/write the memory mapped by page 1?\
 **Ans:**<br/>
+We can see that the flags of page 1 is `0xf` which means it cannot be accessed by user mode, otherwise error would come up. Deduce from this, page 1 should be the guard page. Then page 0 should contain all contents below the guard page, namely the data and text and page 2 would be the stack.
 
 
 ## A kernel page table per process
