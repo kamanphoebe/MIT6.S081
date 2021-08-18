@@ -387,8 +387,6 @@ copyusrmap(pagetable_t dst, pagetable_t src, uint64 old_sz, uint64 new_sz)
   uint64 pa, i;
   uint flags;
 
-  if(new_sz > PLIC)
-     panic("copyusrmap: oversize"); 
   for(i = old_sz; i < new_sz; i += PGSIZE){
     if((pte_src = walk(src, i, 0)) == 0)
       panic("copyusrmap: pte should exist");
