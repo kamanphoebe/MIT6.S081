@@ -1,4 +1,6 @@
-# Eliminate allocation from sbrk()
+# Lab lazy: Lazy allocation
+
+## Eliminate allocation from sbrk()
 
 Easy ;)
 
@@ -34,7 +36,7 @@ sys_sbrk(void)
 }
 ```
 
-# Lazy allocation
+## Lazy allocation
 
 An easy one too! 
 Follow the instructions and copy necessary codes from `uvmalloc()` to construct a initial page-fault handler. Then modify `uvmunmap()` to not panic if some pages aren't mapped by easily skipping them.
@@ -114,7 +116,7 @@ uvmunmap(pagetable_t pagetable, uint64 va, uint64 npages, int do_free)
 ```
 
 
-# Lazytests and Usertests
+## Lazytests and Usertests
 
 The fourth requirement is somewhat tricky for me :(
 
