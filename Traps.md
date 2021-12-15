@@ -1,4 +1,6 @@
-# Using GDB for debugging xv6
+# Lab traps: Trap
+
+## Using GDB for debugging xv6
 
 I had met some troubles when I tried to use GDB to debug xv6 and I finally tackled the problem using the method below.
 
@@ -13,7 +15,7 @@ gdb-multiarch
 Resources:
 [https://zhuanlan.zhihu.com/p/342402097](https://zhuanlan.zhihu.com/p/342402097)
 
-# RISC-V assembly
+## RISC-V assembly
 
 1. **Which registers contain arguments to functions? For example, which register holds `13` in `main`'s call to `printf`?**\
 Register `a0` to `a7` are designed for storing arguments of functions. In this case, register `a2` holds 13 for `printf`.
@@ -35,7 +37,7 @@ At the time of printing strings, the addresses are always read form low to high 
         `printf("x=%d y=%d", 3);`**\
 The value stored in register `a2`, whose specific value depends on the earlier running of the program, is going to be printed due to the lack of the third argument.
 
-# Backtrace
+## Backtrace
 
 I think the key point in this part is that you have to remember a pointer is actually an address. The return value of  `r_fp()` is the frame pointer in type `uint64` and thus requires us to do some type convertions later when using it.
 
@@ -60,7 +62,7 @@ backtrace(void)
 }
 ```
 
-# Alarm
+## Alarm
 
 Test0 is relatively easy and you just need to follow the instructions step by step to finish it. I had stucked on test1 for some time. It's apparent that we have to save the registers during `usertrap` and restore them through `sys_sigreturn`. However, I moved the saved data directly back into the registers at first(using assembly code) while restoring, instead of moving to trapframe because I forgot `sys_sigreturn` is actually a system call, in other words, a trap too...
 
